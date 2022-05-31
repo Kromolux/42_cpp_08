@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 06:38:37 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/31 15:14:00 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:13:23 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	main(void)
 	std::vector<int>	int_vector(100);
 	std::list<int>		int_list(100);
 	std::deque<int>		int_deque(100);
-	srand(time(NULL));
+	std::srand(time(NULL));
 	
-	print_text("Populate int vector and list with random numbers.");
+	print_text("Populate int vector, list and deque with random numbers.");
 	
 	std::generate(int_vector.begin(), int_vector.end(), random_number);
 	std::generate(int_list.begin(), int_list.end(), random_number);
@@ -124,7 +124,7 @@ static void	print_text(std::string output)
 
 static int	random_number(void)
 {
-	return (rand() % 100);
+	return (std::rand() % 100);
 }
 
 static void	print(int & number)
