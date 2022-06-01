@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:21:56 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/06/01 07:06:22 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/06/01 13:26:51 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <iostream>
 # include <stdexcept>
 # include <numeric>
+# include <climits>
 # include <new>
 # include "colors.h"
 
