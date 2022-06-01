@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:21:56 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/31 20:16:58 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/06/01 07:06:22 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <iostream>
 # include <stdexcept>
 # include <numeric>
+# include <new>
 # include "colors.h"
 
 class Span

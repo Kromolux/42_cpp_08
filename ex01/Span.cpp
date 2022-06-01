@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:22:28 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/31 20:42:53 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/06/01 07:07:13 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ Span::Span(unsigned int N) : _size(N)
 	if (DEBUG)
 		std::cout << COLOR_MAGENTA << "[Span] argument constructor called." << std::endl << COLOR_DEFAULT;
 	_vector = new std::vector<int>(N);
+	if (_vector == NULL)
+		throw std::bad_alloc();
 	_index = 0;
 }
 
@@ -52,8 +54,12 @@ Span & Span::operator=(Span const & obj)
 	this->_size = obj._size;
 	this->_index = obj._index;
 	this->_vector = new std::vector<int>(this->_size);
+	if (this->_vector == NULL)
+		throw std::bad_alloc();
 	for (unsigned int i = 0; i < this->_size; i++)
-		this->_vector[i] = obj._vector[i];
+	{
+		this->_vector->at(i) = obj._vector->at(i);
+	}
 	return (*this);
 }
 
@@ -67,7 +73,7 @@ void	Span::addNumber(int number)
 
 unsigned int	Span::shortestSpan(void) const
 {
-	if (this->_size < 2)
+	if (this->_index < 2)
 		throw std::logic_error("Span::Not enough elements to create shortest span!");
 	std::vector<int> vector_copy = *this->_vector;
 
@@ -78,7 +84,7 @@ unsigned int	Span::shortestSpan(void) const
 
 unsigned int	Span::longestSpan(void) const
 {
-	if (this->_size < 2)
+	if (this->_index< 2)
 		throw std::logic_error("Span::Not enough elements to create longest span!");
 	int	min = *std::min_element(this->_vector->begin(), this->_vector->end());
 	int	max = *std::max_element(this->_vector->begin(), this->_vector->end());
