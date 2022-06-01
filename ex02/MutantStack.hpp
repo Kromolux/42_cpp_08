@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 07:13:00 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/06/01 11:27:45 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/06/01 13:36:55 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class MutantStack : public std::stack<T>
 
 #endif
 
+//https://en.cppreference.com/w/cpp/container/stack
 //https://www.cplusplus.com/reference/stack/stack/?kw=stack
 /*
 Container
